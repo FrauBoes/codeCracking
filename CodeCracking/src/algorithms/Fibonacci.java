@@ -2,7 +2,7 @@ package algorithms;
 
 public class Fibonacci {
 	public static void main(String[] args) {
-		System.out.println(fib(9));
+		System.out.println(fib(27));
 	}
 	
 	// Return the nth Fibonacci number
