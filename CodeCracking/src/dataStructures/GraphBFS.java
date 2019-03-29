@@ -62,14 +62,15 @@ public class GraphBFS {
 			
 			curr = q.poll();
 			
-			System.out.print(curr.getData());  // Print current node
+			System.out.print(curr.getData() + " ");  // Print current node
 
 			// Enqueue all adjacent nodes of current node that have not been visited
 			for (GraphNode n : adj[curr.getData()]) {
 				
-				if (!visited[n.getData()])
+				if (!visited[n.getData()]) {
 					q.add(n);
 					visited[n.getData()] = true;
+				}
 			}
 		}
 	}
