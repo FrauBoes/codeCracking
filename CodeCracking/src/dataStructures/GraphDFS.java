@@ -42,7 +42,7 @@ public class GraphDFS {
 	
 	// DFS with v as start vertex
 	public void DFS(int curr) {
-		boolean[] visited = new boolean[V];  // array to keep track of visited nodes
+		boolean[] visited = new boolean[V];  // Array to keep track of visited nodes
 		
 		DFSUtil(curr, visited);		
 	}
