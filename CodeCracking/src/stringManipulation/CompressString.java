@@ -2,7 +2,7 @@ package stringManipulation;
 
 public class CompressString {
 	public static void main(String[] args) {
-		System.out.println(compress("XXY"));
+//		System.out.println(compress("XXYYDDS"));
 	}
 	
 	public static String compress(String s) {
