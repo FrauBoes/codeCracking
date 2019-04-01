@@ -16,7 +16,7 @@ public class PermutationWithList {
 	public static List<String> permute(String full) {
 		// Check if input string is valid
 		if (full.length() == 0 || full == null)
-			System.out.println("You must provide a string of lenghth > 0.");
+			System.out.println("You must provide a string of length > 0.");
 		
 		// Call private method if input string is valid.
 		LinkedList<String> list = new LinkedList<String>();

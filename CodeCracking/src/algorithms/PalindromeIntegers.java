@@ -1,8 +1,5 @@
 package algorithms;
 
-import java.util.ArrayList;
-import java.util.List;
-
 // String with lower and upper case chars and whitespace
 public class PalindromeIntegers {
 	
