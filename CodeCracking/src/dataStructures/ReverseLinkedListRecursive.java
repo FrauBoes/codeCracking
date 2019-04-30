@@ -17,40 +17,40 @@ public class ReverseLinkedListRecursive {
 		SLLNode current = head;
 		System.out.print("Original list: ");
 
-		while (current != null) {
+		while (current.getNext() != null) {
 			System.out.print(current.getElement());
 			current = current.getNext();
 		}
-
+		System.out.print(current.getElement());
 		System.out.println();
 
 		// Get head of reversed list
-		current = reverse(head);		
+		reverseRecursive(head);		
 
 		System.out.print("Reversed list: ");
 
-		while (current != null) {
+		while (current.getNext() != null) {
 			System.out.print(current.getElement());
 			current = current.getNext();
 		}
+		System.out.print(current.getElement());
+
 	}
 	
-	private static SLLNode reverse(SLLNode head) {
+	private static void reverseRecursive(SLLNode curr) {
 		
-		SLLNode curr = head;
-		SLLNode prev = null;
-		SLLNode next;
+		SLLNode head = curr;
 		
-		// Use pointers to reverse links of nodes from head to tail
-		while (curr != null) {
-			next = curr.getNext();
-			curr.setNext(prev);
-			prev = curr;
-			curr = next;
-		}
-
-		// Return prev, which is the new head
-		return prev;
+		if (curr == null) return;
 		
+		SLLNode first = head;
+		SLLNode rest = head.getNext();
+		
+		if (rest == null) return;
+		
+		reverseRecursive(rest);
+		
+		first.getNext().setNext(first);
+		first.setNext(null);
 	}
 }
