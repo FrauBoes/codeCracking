@@ -1,6 +1,6 @@
 package dataStructures;
 
-public class ReverseLinkedList {
+public class ReverseLinkedListRecursive {
 
 	public static void main(String[] args) {
 		// Test method
@@ -17,40 +17,40 @@ public class ReverseLinkedList {
 		SLLNode current = head;
 		System.out.print("Original list: ");
 
-		while (current.getNext() != null) {
+		while (current != null) {
 			System.out.print(current.getElement());
 			current = current.getNext();
 		}
-		System.out.print(current.getElement());
+
 		System.out.println();
 
 		// Get head of reversed list
-		reverseRecursive(head);		
+		current = reverse(head);		
 
 		System.out.print("Reversed list: ");
 
-		while (current.getNext() != null) {
+		while (current != null) {
 			System.out.print(current.getElement());
 			current = current.getNext();
 		}
-		System.out.print(current.getElement());
-
 	}
 	
-	private static void reverseRecursive(SLLNode curr) {
+	private static SLLNode reverse(SLLNode head) {
 		
-		SLLNode head = curr;
+		SLLNode curr = head;
+		SLLNode prev = null;
+		SLLNode next;
 		
-		if (curr == null) return;
+		// Use pointers to reverse links of nodes from head to tail
+		while (curr != null) {
+			next = curr.getNext();
+			curr.setNext(prev);
+			prev = curr;
+			curr = next;
+		}
+
+		// Return prev, which is the new head
+		return prev;
 		
-		SLLNode first = head;
-		SLLNode rest = head.getNext();
-		
-		if (rest == null) return;
-		
-		reverseRecursive(rest);
-		
-		first.getNext().setNext(first);
-		first.setNext(null);
 	}
 }
